@@ -1,0 +1,15 @@
+= H2 on Graal
+
+Some demo to run H2 in memory database on graalvm in native mode.
+
+== Build
+
+Set JAVA_HOME to graal home, build the project with `mvn package` and run `graal.build.199.sh`.
+
+== Test
+
+Run: `./target/sample.bin "create table user(age integer,name varchar(255))" "select count(*) from user"`.
+
+== Tip
+
+`src/graal` was generated running `Sample` main with previous command (`args`) with the GraalVM agent (`-agentlib:native-image-agent=config-output-dir=src/graal`).
